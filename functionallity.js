@@ -1,4 +1,4 @@
-/* 1. ROCKET / LANDER PROFILES */
+//Rocket and lander profiles
 const rockets = {
   robotic: {
     name: "Robotic Lander",
@@ -23,7 +23,7 @@ const rockets = {
   }
 };
 
-/* 2. HTML ELEMENTS */
+//html
 const sliders = {
   slope: document.getElementById("slope"),
   communication: document.getElementById("communication"),
@@ -36,7 +36,7 @@ const resultsDiv = document.getElementById("results");
 const bestSiteDiv = document.getElementById("best-site");
 const selectedSiteDiv = document.getElementById("selected-site");
 
-/* 3. MOON MAP (Your working local moon-map.jpg + fractional zoom) */
+//The moon map
 const map = L.map("moon-map", {
   crs: L.CRS.EPSG4326,
   center:[0, 0],
@@ -57,7 +57,7 @@ map.setMaxBounds(moonBounds);
 let markers = {};
 let lunarSites = [];
 
-/* 4. LOAD LUNAR LOCATION DATA */
+//Load the lunar location data
 fetch("sites.json")
   .then(response => {
     if (!response.ok) {
@@ -102,7 +102,7 @@ fetch("sites.json")
       "<p>Error loading lunar data. Check sites.json and run the project using a local web server.</p>";
   });
 
-/* 5. SLIDERS & SCORING */
+//sliders and scoring
 function getWeights() {
   const values = {
     slope: Number(sliders.slope.value),
@@ -150,7 +150,7 @@ function calculateWeightedScore(site) {
   };
 }
 
-/* 6. ROCKET COMPATIBILITY */
+//Rocket compatibility
 function checkCompatibility(site) {
   const rocket = rockets[rocketSelect.value];
   const conditions = {
@@ -166,7 +166,7 @@ function checkCompatibility(site) {
   };
 }
 
-/* 7. UPDATE RANKINGS & UI */
+//Update rankings
 function updateCalculations() {
   if (lunarSites.length === 0) return;
 
@@ -197,13 +197,20 @@ function updateCalculations() {
     };
   });
 
-  rankedSites.sort((a, b) => b.score - a.score);
+ rankedSites.sort((a, b) => {
+  //Always place compatible sites above non-compatible sites
+  if (a.compatible !== b.compatible) {
+    return a.compatible ? -1 : 1;
+  }
+  //Sort from highest score to lowest score
+  return b.score - a.score;
+});
 
   displayResults(rankedSites);
   updateMarkers(rankedSites);
 }
 
-/* 8. DISPLAY RESULTS & RECOMMENDED SITE */
+//Display results and recomended sites
 function displayResults(sites) {
   resultsDiv.innerHTML = "";
 
@@ -253,7 +260,7 @@ function displayResults(sites) {
   });
 }
 
-/* 9. UPDATE COLOR-CODED MARKERS */
+// update color coded markers
 function updateMarkers(sites) {
   sites.forEach(site => {
     const marker = markers[site.id];

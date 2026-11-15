@@ -1,4 +1,4 @@
-/* GENERAL PAGE */
+/* general page setup */
 
 * {
    box-sizing: border-box;
@@ -32,7 +32,7 @@ main {
 }
 
 
-/* PANELS */
+/* Panels */
 
 .panel {
    background: #202d40;
@@ -48,7 +48,7 @@ h2 {
 }
 
 
-/* ROCKET DROPDOWN */
+/* Rocket dropdown */
 
 select {
    width: 100%;
@@ -67,7 +67,7 @@ select {
 }
 
 
-/* SLIDERS */
+/* sliders */
 
 .slider-container {
    margin: 25px 0;
@@ -95,7 +95,7 @@ input[type="range"] {
 }
 
 
-/* RESULTS */
+/* results */
 
 .site-result {
    background: #34445b;
@@ -150,7 +150,7 @@ input[type="range"] {
 }
 
 
-/* BEST SITE */
+/* optimal site */
 
 #best-site {
    padding: 15px;
@@ -164,7 +164,7 @@ input[type="range"] {
 }
 
 
-/* MOON MAP (Your 2:1 edge-to-edge Moon framing + partner's dark border) */
+/* style moon map */
 
 #moon-map {
    width: 100%;
@@ -176,7 +176,7 @@ input[type="range"] {
 }
 
 
-/* SELECTED SITE */
+/* selected site styling */
 
 #selected-site {
    line-height: 1.8;
@@ -188,7 +188,7 @@ input[type="range"] {
 }
 
 
-/* MAP POPUPS */
+/* Map popups */
 
 .leaflet-popup-content-wrapper {
    border-radius: 8px;
@@ -200,7 +200,7 @@ input[type="range"] {
 }
 
 
-/* MOBILE */
+/* Mobile adjustments */
 
 @media (max-width: 600px) {
 

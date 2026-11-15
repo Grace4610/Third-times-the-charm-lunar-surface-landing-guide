@@ -8,8 +8,6 @@
 
   <!-- Leaflet map CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-  <!-- Your CSS (matches your styling.css tab) -->
   <link rel="stylesheet" href="styling.css" />
 </head>
 
@@ -22,7 +20,7 @@
 
   <main>
 
-    <!-- 1. ROCKET SELECTION -->
+    <!-- Rocket selection -->
     <section class="panel">
       <h2>1. Select Your Rocket</h2>
       <label for="rocket">Rocket / Lander Type</label>
@@ -34,7 +32,7 @@
       <div id="rocket-info"></div>
     </section>
 
-    <!-- 2. MISSION PRIORITIES -->
+    <!-- Missions priorities/sliders -->
     <section class="panel">
       <h2>2. Mission Priorities</h2>
       <p>Adjust the sliders to determine the importance of each factor on this mission.</p>
@@ -72,21 +70,21 @@
       </p>
     </section>
 
-    <!-- 3. LANDING SITE RESULTS -->
+    <!-- resulting landing sites -->
     <section class="panel">
       <h2>3. Best Landing Locations</h2>
       <div id="best-site"></div>
       <div id="results"></div>
     </section>
 
-    <!-- 4. MOON MAP -->
+    <!-- Moon map -->
     <section class="panel">
       <h2>4. Interactive Lunar Map</h2>
       <p>Select a marker to explore a landing location and view its mission suitability.</p>
       <div id="moon-map"></div>
     </section>
 
-    <!-- 5. SELECTED LOCATION -->
+    <!-- selected location -->
     <section class="panel">
       <h2>5. Selected Landing Location</h2>
       <div id="selected-site">
@@ -99,8 +97,6 @@
   <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-
-  <!-- Teammate's UI Functionality (check if your tab is spelled functionallity.js or functionality.js) -->
   <script src="functionallity.js"></script>
 
 </body>
