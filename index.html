@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunar Landing Site Navigator</title>
+
+  <!-- Leaflet map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Your CSS (matches your styling.css tab) -->
+  <link rel="stylesheet" href="styling.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>🌙 Lunar Landing Site Navigator</h1>
+    <p>Find the optimal lunar landing location for your mission.</p>
+  </header>
+
+  <main>
+
+    <!-- 1. ROCKET SELECTION -->
+    <section class="panel">
+      <h2>1. Select Your Rocket</h2>
+      <label for="rocket">Rocket / Lander Type</label>
+      <select id="rocket">
+        <option value="robotic">Robotic Lander (Max Slope: 15°)</option>
+        <option value="crewed">Crewed Lander (Max Slope: 10°)</option>
+        <option value="cargo">Heavy Cargo Lander (Max Slope: 12°)</option>
+      </select>
+      <div id="rocket-info"></div>
+    </section>
+
+    <!-- 2. MISSION PRIORITIES -->
+    <section class="panel">
+      <h2>2. Mission Priorities</h2>
+      <p>Adjust the sliders to determine which environmental factors are most important.</p>
+
+      <div class="slider-container">
+        <label for="slope">
+          Slope Importance: <span id="slope-value">25%</span>
+        </label>
+        <input type="range" id="slope" min="0" max="100" value="25">
+      </div>
+
+      <div class="slider-container">
+        <label for="communication">
+          Earth Communication: <span id="communication-value">25%</span>
+        </label>
+        <input type="range" id="communication" min="0" max="100" value="25">
+      </div>
+
+      <div class="slider-container">
+        <label for="sunlight">
+          Sunlight Availability: <span id="sunlight-value">25%</span>
+        </label>
+        <input type="range" id="sunlight" min="0" max="100" value="25">
+      </div>
+
+      <div class="slider-container">
+        <label for="ice">
+          Water Ice Proximity: <span id="ice-value">25%</span>
+        </label>
+        <input type="range" id="ice" min="0" max="100" value="25">
+      </div>
+
+      <p class="small-text">
+        Slider values are automatically normalized to calculate your final weighted score.
+      </p>
+    </section>
+
+    <!-- 3. LANDING SITE RESULTS -->
+    <section class="panel">
+      <h2>3. Best Landing Locations</h2>
+      <div id="best-site"></div>
+      <div id="results"></div>
+    </section>
+
+    <!-- 4. MOON MAP -->
+    <section class="panel">
+      <h2>4. Interactive Lunar Map</h2>
+      <p>Select a marker to explore a landing location and view its mission suitability.</p>
+      <div id="moon-map"></div>
+    </section>
+
+    <!-- 5. SELECTED LOCATION -->
+    <section class="panel">
+      <h2>5. Selected Landing Location</h2>
+      <div id="selected-site">
+        Click a lunar map marker or a result to view location details.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Your Math & Map Engine -->
+  <script src="math.js"></script>
+
+  <!-- Teammate's UI Functionality (check if your tab is spelled functionallity.js or functionality.js) -->
+  <script src="functionallity.js"></script>
+
+</body>
+</html>
