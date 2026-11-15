@@ -208,7 +208,7 @@ function displayResults(sites) {
   resultsDiv.innerHTML = "";
 
   const compatibleSites = sites.filter(site => site.compatible);
-  const bestSite = compatibleSites;
+  const bestSite = compatibleSites[0];
 
   if (bestSite) {
     bestSiteDiv.innerHTML = `
@@ -278,14 +278,32 @@ function updateMarkers(sites) {
   });
 }
 
-/* 10. SELECT & INSPECT SITE */
+//select and veiw site
 function selectSite(id) {
   const site = lunarSites.find(location => location.id === id);
   if (!site) return;
 
+  document.getElementById("moon-map").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+  //apply normal green/red colors first, then highlight the selected pin in gold
+  updateCalculations();
   const marker = markers[id];
-  map.setView([site.lat, site.lon], 3);
-  marker.openPopup();
+  if (marker) {
+    marker.setStyle({
+      fillColor: "#ffd166",
+      color: "#ffffff",
+      radius: 12,
+      weight: 3
+    });
+    marker.bringToFront();
+
+    // Zoom into the landing site and open its popup card
+    map.setView([site.lat, site.lon], 3);
+    marker.openPopup();
+  }
   showSelectedSite(site);
 }
 
@@ -325,18 +343,7 @@ function showSelectedSite(site) {
   `;
 }
 
-/* 10. SELECT & INSPECT SITE */
-function selectSite(id) {
-  const site = lunarSites.find(location => location.id === id);
-  if (!site) return;
-
-  const marker = markers[id];
-  map.setView([site.lat, site.lon], 3);
-  marker.openPopup();
-  showSelectedSite(site);
-}
-
-/* 11. EVENT LISTENERS */
+//Event listeners
 Object.values(sliders).forEach(slider => {
   slider.addEventListener("input", updateCalculations);
 });
