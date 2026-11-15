@@ -1,0 +1,219 @@
+/* GENERAL PAGE */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 20px;
+   font-family: Arial, sans-serif;
+   background: #101827;
+   color: white;
+}
+
+header {
+   text-align: center;
+   padding: 25px;
+}
+
+header h1 {
+   color: #8ecbff;
+   font-size: 32px;
+}
+
+header p {
+   color: #bdc9d8;
+}
+
+main {
+   max-width: 1100px;
+   margin: auto;
+}
+
+
+/* PANELS */
+
+.panel {
+   background: #202d40;
+   padding: 22px;
+   margin: 22px 0;
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+h2 {
+   color: #8ecbff;
+   margin-top: 0;
+}
+
+
+/* ROCKET DROPDOWN */
+
+select {
+   width: 100%;
+   padding: 12px;
+   margin-top: 10px;
+   background: #34445b;
+   color: white;
+   border: 1px solid #61748d;
+   border-radius: 6px;
+   font-size: 16px;
+}
+
+#rocket-info {
+   margin-top: 12px;
+   color: #bdc9d8;
+}
+
+
+/* SLIDERS */
+
+.slider-container {
+   margin: 25px 0;
+}
+
+.slider-container label {
+   display: block;
+   margin-bottom: 10px;
+   font-weight: bold;
+}
+
+.slider-container span {
+   color: #70c6ff;
+}
+
+input[type="range"] {
+   width: 100%;
+   cursor: pointer;
+   accent-color: #55b8ff;
+}
+
+.small-text {
+   font-size: 13px;
+   color: #aab8c9;
+}
+
+
+/* RESULTS */
+
+.site-result {
+   background: #34445b;
+   padding: 18px;
+   margin: 15px 0;
+   border-radius: 8px;
+   cursor: pointer;
+   border: 1px solid transparent;
+}
+
+.site-result:hover {
+   border-color: #55b8ff;
+}
+
+.site-result h3 {
+   margin-top: 0;
+}
+
+.score {
+   color: #70e6a0;
+   font-size: 25px;
+   font-weight: bold;
+}
+
+.score-bar {
+   background: #52647a;
+   height: 12px;
+   border-radius: 10px;
+   overflow: hidden;
+   margin: 10px 0;
+}
+
+.score-fill {
+   background: #55b8ff;
+   height: 100%;
+}
+
+.compatible {
+   color: #70e6a0;
+   font-weight: bold;
+}
+
+.incompatible {
+   color: #ff7777;
+   font-weight: bold;
+}
+
+.result-details {
+   color: #bdc9d8;
+   font-size: 14px;
+   line-height: 1.7;
+}
+
+
+/* BEST SITE */
+
+#best-site {
+   padding: 15px;
+   background: #183d39;
+   border-radius: 8px;
+   margin-bottom: 20px;
+}
+
+#best-site h3 {
+   color: #70e6a0;
+}
+
+
+/* MOON MAP (Your 2:1 edge-to-edge Moon framing + partner's dark border) */
+
+#moon-map {
+   width: 100%;
+   max-width: 1000px;
+   aspect-ratio: 2 / 1;
+   margin: 0 auto;
+   border-radius: 10px;
+   background: #080d16;
+}
+
+
+/* SELECTED SITE */
+
+#selected-site {
+   line-height: 1.8;
+   color: #d3deeb;
+}
+
+#selected-site h3 {
+   color: #8ecbff;
+}
+
+
+/* MAP POPUPS */
+
+.leaflet-popup-content-wrapper {
+   border-radius: 8px;
+}
+
+.leaflet-popup-content {
+   color: #202d40;
+   line-height: 1.6;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+   body {
+       padding: 10px;
+   }
+
+   header h1 {
+       font-size: 25px;
+   }
+
+   .panel {
+       padding: 15px;
+   }
+
+}
